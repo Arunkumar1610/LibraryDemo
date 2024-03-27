@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'maven-publish'
 }
 
 android {
@@ -34,6 +35,20 @@ dependencies {
     implementation 'com.google.android.material:material:1.11.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
+    implementation project(":demoLibrary")
+    implementation 'com.android.tools.build:gradle:7.4.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
+
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            release(MavenPublication) {
+//                from components.release
+//                groupId = 'com.example'
+//                artifactId = 'demoLibrary'
+//                version = '2.0'
+//            }
+//        }
+//    }
